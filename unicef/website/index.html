@@ -1,15 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>My First Website</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Vatsalya Plus — Heat Advisory</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">VP</div>
+        <div class="brand-text">
+          <div class="title">Vatsalya Plus</div>
+          <div class="subtitle">Agricultural Advisory</div>
+        </div>
+      </div>
+      <div class="location">
+        <select id="locationSelect" aria-label="Location">
+          <option>Jalgaon</option>
+          <option>Nashik</option>
+          <option>Pune</option>
+        </select>
+      </div>
+      <div class="listen">
+        <button id="listenBtn">Listen to Today's Advisory</button>
+      </div>
+    </header>
 
-  <h1>Hello, World</h1>
-  <button onclick="sayHi()">Click me</button>
+    <main>
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="hero-left">
+            <div class="alert-icon">✕</div>
+            <div class="hero-title">Heat Alert! Do Not Spray</div>
+            <div class="hero-sub">Jalgaon</div>
+          </div>
+          <div class="hero-cards">
+            <div class="card big">
+              <div class="label">Current Temperature</div>
+              <div class="value" id="currentTemp">--°C</div>
+            </div>
+            <div class="card big">
+              <div class="label">Real Feel</div>
+              <div class="value" id="realFeel">--°C</div>
+            </div>
+          </div>
+        </div>
 
-  <script src="script.js"></script>
-</body>
+        <div class="status-row">
+          <div class="heat-status">
+            <div class="legend">
+              <div class="dot green"></div>
+              <div class="legend-label">Normal</div>
+              <div class="dot orange"></div>
+              <div class="legend-label">Caution</div>
+              <div class="dot red"></div>
+              <div class="legend-label">Alert</div>
+            </div>
+            <div class="current-status">
+              <div class="current-dot" id="statusIndicator"></div>
+              <div class="current-text">Current Status</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="forecast-section">
+        <h2>15-Day Temperature Forecast</h2>
+        <div class="advice" id="advice"></div>
+        <div class="forecast-wrap">
+          <div class="forecast" id="forecast"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">&copy; Vatsalya Plus</footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
